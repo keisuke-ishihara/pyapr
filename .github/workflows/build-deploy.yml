@@ -55,7 +55,7 @@ jobs:
       CIBW_TEST_COMMAND: "python3 -m pytest -vv {project}/pyapr/tests"
       CIBW_TEST_SKIP: "*-win_amd64"  # windows tests are run separately
       CIBW_BEFORE_BUILD_LINUX: "yum makecache && yum install -y libtiff-devel hdf5-devel"
-      CIBW_ENVIRONMENT_MACOS: CPPFLAGS="-I/opt/homebrew/opt/llvm/include" LDFLAGS="-L/opt/homebrew/opt/llvm/lib/c++ -Wl,-rpath,/opt/homebrew/opt/llvm/lib/c++" CXX="/opt/homebrew/opt/llvm/bin/clang++" CC="/opt/homebrew/opt/llvm/bin/clang"
+      CIBW_ENVIRONMENT_MACOS: CPPFLAGS="-I/opt/homebrew/opt/llvm/include" LDFLAGS="-L/opt/homebrew/opt/llvm/lib/c++ -Wl,-rpath,/opt/homebrew/opt/llvm/lib/c++" CXX="/opt/homebrew/opt/llvm/bin/clang++" CC="/opt/homebrew/opt/llvm/bin/clang" EXTRA_CMAKE_ARGS="-DCMAKE_PREFIX_PATH=/opt/homebrew/Cellar/libtiff/4.6.0"
 
     steps:
       - uses: actions/checkout@v4
