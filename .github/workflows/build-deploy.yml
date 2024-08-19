@@ -45,7 +45,7 @@ jobs:
       # Indicates the location of the vcpkg as a Git submodule of the project repository.
       VCPKG_ROOT: ${{ github.workspace }}/external/LibAPR/vcpkg
       CIBW_ENVIRONMENT_WINDOWS: EXTRA_CMAKE_ARGS="-DCMAKE_TOOLCHAIN_FILE=D:\\a\\pyapr\\pyapr\\external\\LibAPR\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake -DVCPKG_MANIFEST_DIR=D:\\a\\pyapr\\pyapr\\external\\LibAPR\\"
-      CIBW_BUILD: "cp38-* cp39-* cp310-* cp311-*"
+      CIBW_BUILD: "cp38-* cp39-* cp310-* cp311-* cp312-*"
       CIBW_SKIP: "*musllinux*"
       CIBW_ARCHS: "auto64"
       CIBW_BUILD_VERBOSITY: 1
