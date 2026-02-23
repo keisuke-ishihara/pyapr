@@ -50,7 +50,7 @@ jobs:
       # Indicates the location of the vcpkg as a Git submodule of the project repository.
       VCPKG_ROOT: ${{ github.workspace }}/external/LibAPR/vcpkg
       CIBW_ENVIRONMENT_WINDOWS: EXTRA_CMAKE_ARGS="-DCMAKE_TOOLCHAIN_FILE=D:\\a\\pyapr\\pyapr\\external\\LibAPR\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake -DVCPKG_MANIFEST_DIR=D:\\a\\pyapr\\pyapr\\external\\LibAPR\\"
-      CIBW_BUILD: "cp39-* cp310-* cp311-* cp312-* cp313-*"
+      CIBW_BUILD: "cp38-* cp39-* cp310-* cp311-* cp312-* cp313-*"
       CIBW_SKIP: "*musllinux*"
       CIBW_BUILD_VERBOSITY: 1
       CIBW_REPAIR_WHEEL_COMMAND_MACOS: "pip install -U delocate && delocate-listdeps {wheel} && delocate-wheel -w {dest_dir} -v {wheel}"
@@ -149,7 +149,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ windows-latest ]
-        python-version: ['3.9', '3.10', '3.11', '3.12', '3.13']
+        python-version: ['3.8', '3.9', '3.10', '3.11', '3.12', '3.13']
 
     steps:
       - name: Checkout
